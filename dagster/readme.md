@@ -1,7 +1,7 @@
 # Dagster
 
 Dagster is an open-source data orchestrator for machine learning, analytics, and ETL. It helps you build, run, and monitor data pipelines with ease.
-In this repo I will have an simple example of how to use Dagster for demos.
+In this repo I will have an simple example of how to use Dagster for demos and connect to Neo4j.
 
 ## Features
 
