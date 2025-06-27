@@ -1,0 +1,19 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+lines-after-imports = 2
+order-by-type = false
+case-sensitive = false
+force-wrap-aliases = true
+split-on-trailing-comma = true
+relative-imports-order = "closest-to-furthest"
+known-first-party = ["assets", "functions", "resources"]
+
+[tool.black]
+line-length = 120
