@@ -14,16 +14,24 @@ CREATE TABLE adress_silver (
     );
 
 CREATE TABLE persons_bronze (
+        person_id INTEGER,
         household_id INTEGER,
-        street_address VARCHAR,
-        zip_code VARCHAR,
-        location VARCHAR
+        name VARCHAR,
+        year_of_birth INTEGER,
+        income INTEGER
+        
     );
 
-CREATE TABLE persons_bronze (
-    person_id BIGINT,
-    address_id BIGINT,
-    name VARCHAR,
-    year_of_birth BIGINT,
-    income BIGINT
+CREATE TABLE household_data (
+    household_id BIGINT,
+    mean_yob REAL,
+    household_income BIGINT
 );
+
+CREATE TABLE household_gold (
+    household_id BIGINT,
+    mean_yob REAL,
+    household_income BIGINT,
+    full_adress VARCHAR
+);
+

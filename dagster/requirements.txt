@@ -3,3 +3,7 @@ numpy
 dagster
 duckdb
 dagster-duckdb
+pytest
+matplotlib
+import base64
+import io

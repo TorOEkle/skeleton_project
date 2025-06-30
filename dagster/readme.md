@@ -26,21 +26,9 @@ Dagster is licensed under the Apache 2.0 License.
 
 ### DuckDB Schema Creation
 
-```sql
+Navigate to the `data`folder and run the following command to create the DuckDB database.
 
-CREATE TABLE adress_bronze (
-        household_id INTEGER,
-        street_address VARCHAR,
-        zip_code VARCHAR,
-        location VARCHAR
-    );
-
-CREATE TABLE adress_silver (
-        household_id INTEGER,
-        street_address VARCHAR,
-        zip_code VARCHAR,
-        location VARCHAR,
-        full_adress VARCHAR
-    );
-
+```bash
+duckdb demo_database.duckdb < schema.sql    
 ```
+

@@ -1,20 +1,16 @@
-from dagster import (
-    DailyPartitionsDefinition,
-    DynamicPartitionsDefinition,
-    MonthlyPartitionsDefinition,
-    StaticPartitionsDefinition,
-)
 import functools
 import time
 from typing import Any, Callable
 
-START = 10000
-END = 99999
-CHUNK_SIZE = 25000  # Define chunk size
+from dagster import (
+    DynamicPartitionsDefinition,
+    MonthlyPartitionsDefinition,
+    StaticPartitionsDefinition,
+)
 
-partition_values = [str(i) for i in range(START, END, CHUNK_SIZE)]
+
 # Define numeric partitions
-adress_partitions = StaticPartitionsDefinition(partition_values)
+adress_partitions = StaticPartitionsDefinition(['0', '50000'])
 
 # Månadlig partitionering
 # Den starter den 1. månaden efter start_date, end_offset = 1 ==> upp til dagens datum.

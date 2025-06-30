@@ -2,20 +2,22 @@ import pandas as pd
 
 
 def transform_adress(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Transforms the 'address' column in the DataFrame by splitting it into 'street', 'city', and 'zip_code'.
-    
-    Args:
-        df (pd.DataFrame): Input DataFrame with an 'address' column.
-        
-    Returns:
-        pd.DataFrame: DataFrame with new column "full_adress"
-    """
-    "street_address", "zip_code", "location"
-    street = df['street_adress'].fillna('').str.lower()
-    zip_code = df['zip_code'].fillna('').astype(str)
-    location = df['location'].fillna('').astype(str)
-    df['full_adress'] = street + ", " + zip_code + " " + location
-    
+    street = df["street_address"].fillna("").str.strip().str.lower()
+    zip_code = df["zip_code"].fillna("").astype(str).str.strip()
+    location = df["location"].fillna("").astype(str).str.strip().str.lower()
+
+    # Build zip+location (no extra space if one is missing)
+    zip_loc = (zip_code + " " + location).str.strip()
+    zip_loc = zip_loc.replace("", pd.NA)
+
+    # Only add comma if street is present
+    full = (
+        street.where(street != "", pd.NA)
+        + ", "
+        + zip_loc.where(zip_loc.notna(), "")
+    ).fillna(zip_loc).str.strip(", ").replace("", pd.NA)
+
+    df["full_adress"] = full
     return df
+
 

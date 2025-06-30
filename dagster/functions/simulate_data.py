@@ -1,7 +1,9 @@
+import random
+
 from faker import Faker
 import numpy as np
 import pandas as pd
-import random
+
 
 def generate_norwegian_addresses(n_addresses: int = 1000) -> pd.DataFrame:
     """
@@ -56,7 +58,6 @@ def simulate_person_data(id_adress: pd.Series) -> pd.DataFrame:
     np.random.seed(105)
 
     n_addresses = len(id_adress)
-    n_persons = n_addresses * 2
 
     # Generate base year of birth for each address
     base_yobs = np.random.randint(1950, 1996, size=n_addresses)
@@ -83,7 +84,7 @@ def simulate_person_data(id_adress: pd.Series) -> pd.DataFrame:
             income = round((2025 - yob) * normal_noise * 10000)
             person_rows.append({
                 "person_id": person_id,
-                "address_id": address_id,
+                "household_id": address_id,
                 "name": fake.name(),
                 "year_of_birth": yob,
                 "income": int(income)
