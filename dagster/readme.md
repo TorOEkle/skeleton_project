@@ -22,3 +22,25 @@ Pytest is a testing framework for Python that makes it easy to write simple and 
 ## License
 
 Dagster is licensed under the Apache 2.0 License.
+
+
+### DuckDB Schema Creation
+
+```sql
+
+CREATE TABLE adress_bronze (
+        household_id INTEGER,
+        street_address VARCHAR,
+        zip_code VARCHAR,
+        location VARCHAR
+    );
+
+CREATE TABLE adress_silver (
+        household_id INTEGER,
+        street_address VARCHAR,
+        zip_code VARCHAR,
+        location VARCHAR,
+        full_adress VARCHAR
+    );
+
+```

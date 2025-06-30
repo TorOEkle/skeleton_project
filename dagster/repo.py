@@ -1,9 +1,11 @@
-from dagster import load_assets_from_modules, Definitions, define_asset_job, AssetSelection, EnvVar, ScheduleDefinition
-import assets.demo_assets as demo_assets
-from resources.drivers import Neo4jDriver, DuckDBResource
+from dagster import Definitions, EnvVar, load_assets_from_modules
+
+import assets.adress_assets as adress_assets
+from resources.drivers import DuckDBResource, Neo4jDriver
+
 
 demo_asset_group = load_assets_from_modules(
-    [demo_assets],  
+    [adress_assets],  
     group_name="demo_assets"
 )
 

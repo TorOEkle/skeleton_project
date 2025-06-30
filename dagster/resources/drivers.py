@@ -1,6 +1,7 @@
 from dagster import ConfigurableResource
-from neo4j import GraphDatabase
 import duckdb
+from neo4j import GraphDatabase
+
 
 class Neo4jDriver(ConfigurableResource):
     uri: str
