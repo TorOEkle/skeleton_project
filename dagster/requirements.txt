@@ -1,9 +1,9 @@
-pandas
-numpy
-dagster
-duckdb
-dagster-duckdb
-pytest
-matplotlib
-import base64
-import io
+pandas==2.0.3
+numpy==1.26.0
+dagster==1.10.18
+duckdb==1.3.1
+dagster-duckdb==0.26.18
+pytest==7.4.4
+matplotlib==3.8.4
+base64
+io
