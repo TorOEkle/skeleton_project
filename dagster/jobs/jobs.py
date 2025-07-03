@@ -1,6 +1,8 @@
+from dagster import AssetSelection, define_asset_job
+
 import assets.adress_assets as adress_assets
 import assets.person_assets as person_assets
-from dagster import define_asset_job, AssetSelection
+
 
 ## Define jobs
 

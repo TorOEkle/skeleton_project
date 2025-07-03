@@ -2,15 +2,16 @@ from dagster import Definitions, EnvVar, load_assets_from_modules
 
 import assets.adress_assets as adress_assets
 import assets.person_assets as person_assets
-from resources.drivers import DuckDBResource, Neo4jDriver
 from jobs.jobs import (
-    simulate_data_job,
     populate_data_job,
+    simulate_data_job,
 )
 from jobs.schedules import (
-    simulate_data_schedule,
     populate_data_schedule,
+    simulate_data_schedule,
 )
+from resources.drivers import DuckDBResource, Neo4jDriver
+
 
 ## A S S E T S ##
 demo_asset_group = load_assets_from_modules(

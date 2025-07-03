@@ -34,4 +34,3 @@ CREATE TABLE household_gold (
     household_income BIGINT,
     full_adress VARCHAR
 );
-

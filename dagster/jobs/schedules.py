@@ -1,5 +1,7 @@
 from dagster import ScheduleDefinition
+
 from jobs.jobs import populate_data_job, simulate_data_job
+
 
 # Define schedules for the jobs
 simulate_data_schedule = ScheduleDefinition(
