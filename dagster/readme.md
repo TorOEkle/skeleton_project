@@ -24,11 +24,43 @@ Pytest is a testing framework for Python that makes it easy to write simple and 
 Dagster is licensed under the Apache 2.0 License.
 
 
+## Virtual environment setup with UV
+1. **Install UV**
+    ```bash
+    pip install uv
+    ```
+2. **Create a virtual environment**
+    ```bash
+    uv venv dagster-env
+    ```
+3. **Activate the virtual environment**
+    - On Windows:
+      ```bash
+      .dagster-env\Scripts\activate
+      ```
+    - On macOS/Linux:
+      ```bash
+      source dagster-env/bin/activate   
+      ```   
+4. **Install packages**
+    ```bash
+    uv pip install requirments.txt
+    ```
+
 ### DuckDB Schema Creation
 
 Navigate to the `data`folder and run the following command to create the DuckDB database.
 
 ```bash
 duckdb demo_database.duckdb < schema.sql    
+```
+
+*PS:* if database already exist run `rm demo_database.duckdb`
+
+## Running Dagster
+To run Dagster, you can use the following command in your terminal:
+
+```bash
+dagster dev
 ```
 
